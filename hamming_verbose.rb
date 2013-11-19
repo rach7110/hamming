@@ -41,9 +41,18 @@ class Hamming
 		while array_1.length > i || array_2.length > i
 			if array_1[i] != array_2[i]
 				hamming_total +=1
+				puts "Round #{i+1} scored a point"
+			else
+				puts "Round #{i+1} did NOT score a point"
 			end
+			puts "ARRAY 1: #{array_1}"
+			puts "ARRAY 2: #{array_2}"
+			puts "Hamming Total: #{hamming_total}"
+			puts ""
+			sleep 2
 			i += 1
 		end
+		puts "\n"
 		puts "*************************************************************"
 		puts "DNA 1: #{@dna_1}"
 		puts "DNA 2: #{@dna_2}"
