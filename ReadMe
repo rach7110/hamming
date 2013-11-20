@@ -1,13 +1,6 @@
 ReadMe
 
-Here is the take home project. Please upload your solution to Github and send us a link. Focus on:
-
-- Ruby conventions and idioms
-- Source code readability
-
-Try and complete this by Wednesday. After you turn it it, our devs will take a look and ask you a few questions about the solution. Good luck!
-Hamming
-Write a program that can calculate the Hamming difference between two DNA strands.
+Hamming: A program that can calculate the Hamming difference between two DNA strands.
 
 A mutation is simply a mistake that occurs during the creation or copying of a nucleic acid, in particular DNA. Because nucleic acids are vital to cellular functions, mutations tend to cause a ripple effect throughout the cell. Although mutations are technically mistakes, a very rare mutation may equip the cell with a beneficial attribute. In fact, the macro effects of evolution are attributable by the accumulated result of beneficial microscopic mutations over many generations.
 
