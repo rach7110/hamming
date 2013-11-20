@@ -54,8 +54,8 @@ class Hamming
 
 	def calculate
 		# Converts the DNA inputs from strings to array of characters:
-		array_1 = @dna_1.split("")
-		array_2 = @dna_2.split("")
+		array_1 = @dna_1.split("").map {|letter| letter.capitalize}
+		array_2 = @dna_2.split("").map {|letter| letter.capitalize}
 		
 		@hamming_total = 0
 		i = 0
@@ -70,19 +70,19 @@ class Hamming
 				puts "Round #{i+1} did NOT score a point"
 			end
 			# Verbage - for debuging:
-			puts "DNA 1: #{@dna_1}"
-			puts "DNA 2: #{@dna_2}"
-			puts "Hamming Total: #{hamming_total}"
+			puts "DNA 1: #{array_1}"
+			puts "DNA 2: #{array_2}"
+			puts "Hamming Total: #{@hamming_total}"
 			puts ""
-			sleep 2
+			sleep 1
 			i += 1
 		end
 		# Outputs the results:
 		puts "\n"
 		puts "*************************************************************"
-		puts "DNA 1: #{@dna_1}"
-		puts "DNA 2: #{@dna_2}"
-		puts "Hamming Total: #{hamming_total}"
+		puts "DNA 1: #{array_1}"
+		puts "DNA 2: #{array_2}"
+		puts "Hamming Total: #{@hamming_total}"
 		puts "\n"
 		puts "Thank you for using the Hamming Calculator."
 		puts "*************************************************************"
