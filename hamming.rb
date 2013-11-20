@@ -17,10 +17,17 @@ puts "EXAMPLE: Hamming.new"
 puts "\n"
 puts "*******************************************************************************"
 
-# A Hamming instance performs the comparison between two DNA strands:
+# Hamming instances performs the comparison between two DNA strands:
 class Hamming
+	attr_accessor :dna_1, :dna_2
+	attr_reader :hamming_total
 
 	def initialize
+		calculate 
+	end
+
+	def calculate
+		# Ask user for two DNA strings:
 		puts "Please enter the 1st DNA strand."
 		@dna_1 = gets.chomp.to_s
 		puts "Please enter the 2nd DNA strand"
@@ -28,22 +35,22 @@ class Hamming
 		puts "Thank you. Let's begin..."
 		puts "\n"
 		sleep 1
-		calculate 
-	end
-
-	def calculate
-		# converts the DNA inputs from strings to array of characters:
+		# Converts the DNA inputs from strings to array of characters:
 		array_1 = @dna_1.split("")
 		array_2 = @dna_2.split("")
-		hamming_total = 0
+		
+		@hamming_total = 0
 		i = 0
-		# iterates through the arrays and checks if the character values for each index position are the same in the two DNA arrays:
+		# Compares the character values in the DNA arrays:
 		while array_1.length > i || array_2.length > i
 			if array_1[i] != array_2[i]
-				hamming_total +=1
+				@hamming_total +=1
 			end
 			i += 1
 		end
+		sleep 2
+		# Outputs the results:
+		puts "\n"
 		puts "*************************************************************"
 		puts "DNA 1: #{@dna_1}"
 		puts "DNA 2: #{@dna_2}"
@@ -52,5 +59,4 @@ class Hamming
 		puts "Thank you for using the calculator."
 		puts "*************************************************************"
 	end
-
 end
