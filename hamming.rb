@@ -1,4 +1,4 @@
-# Calculates the Hamming difference between two DNA strands.
+# This Ruby code will calculates the Hamming difference between two DNA strands.
 
 # Example:
 # GAGCCTACTAACGGGAT
@@ -17,24 +17,42 @@ puts "EXAMPLE: Hamming.new"
 puts "\n"
 puts "*******************************************************************************"
 
-# Hamming instances performs the comparison between two DNA strands:
 class Hamming
 	attr_accessor :dna_1, :dna_2
 	attr_reader :hamming_total
 
 	def initialize
-		calculate 
+		inputs
+	end
+
+	# User enters two DNA strings:
+	def inputs
+		puts "\n"
+		puts "Please enter the 1st DNA strand."
+		@dna_1 = gets.chomp.to_s.upcase 
+		puts "Please enter the 2nd DNA strand"
+		@dna_2 = gets.chomp.to_s.upcase
+		# Confirms the user entered the right DNA strings:
+		puts "\n"
+		puts "You've entered:"
+		puts "DNA 1: #{@dna_1}"
+		puts "DNA 2: #{@dna_2}"
+		puts "\n"
+		puts "Press 1 if correct; 2 if incorrect."
+		answer = gets.chomp.to_i
+		# User can re-enter DNA strings (ie: if typed incorrectly):
+		if answer == 2
+			inputs
+		else
+			puts "\n"
+			puts "Thank you. Let's begin..."
+			puts "\n"
+			sleep 1
+			calculate
+		end
 	end
 
 	def calculate
-		# Ask user for two DNA strings:
-		puts "Please enter the 1st DNA strand."
-		@dna_1 = gets.chomp.to_s
-		puts "Please enter the 2nd DNA strand"
-		@dna_2 = gets.chomp.to_s
-		puts "Thank you. Let's begin..."
-		puts "\n"
-		sleep 1
 		# Converts the DNA inputs from strings to array of characters:
 		array_1 = @dna_1.split("")
 		array_2 = @dna_2.split("")
@@ -48,7 +66,6 @@ class Hamming
 			end
 			i += 1
 		end
-		sleep 2
 		# Outputs the results:
 		puts "\n"
 		puts "*************************************************************"
@@ -56,7 +73,7 @@ class Hamming
 		puts "DNA 2: #{@dna_2}"
 		puts "Hamming Total: #{hamming_total}"
 		puts "\n"
-		puts "Thank you for using the calculator."
+		puts "Thank you for using the Hamming Calculator."
 		puts "*************************************************************"
 	end
 end

@@ -1,4 +1,4 @@
-# This Ruby code will calculates the Hamming difference between two DNA strands.
+# Calculates the Hamming difference between two DNA strands.
 
 # Example:
 # GAGCCTACTAACGGGAT
@@ -17,6 +17,7 @@ puts "EXAMPLE: Hamming.new"
 puts "\n"
 puts "*******************************************************************************"
 
+# Hamming instances have two DNA strands and a Hamming Total as attributes:
 class Hamming
 	attr_accessor :dna_1, :dna_2
 	attr_reader :hamming_total
@@ -29,10 +30,14 @@ class Hamming
 	def inputs
 		puts "\n"
 		puts "Please enter the 1st DNA strand."
-		@dna_1 = gets.chomp.to_s.upcase 
+		@dna_1 = gets.chomp.to_s
 		puts "Please enter the 2nd DNA strand"
-		@dna_2 = gets.chomp.to_s.upcase
-		# Confirms the user entered the right DNA strings:
+		@dna_2 = gets.chomp.to_s
+		confirmation
+	end
+
+	# Confirms the user entered the right DNA strings:
+	def confirmation
 		puts "\n"
 		puts "You've entered:"
 		puts "DNA 1: #{@dna_1}"
@@ -43,13 +48,12 @@ class Hamming
 		# User can re-enter DNA strings (ie: if typed incorrectly):
 		if answer == 2
 			inputs
-		else
-			puts "\n"
-			puts "Thank you. Let's begin..."
-			puts "\n"
-			sleep 1
-			calculate
 		end
+		puts "\n"
+		puts "Thank you. Let's begin..."
+		puts "\n"
+		sleep 1
+		calculate
 	end
 
 	def calculate
@@ -70,10 +74,11 @@ class Hamming
 				puts "Round #{i+1} did NOT score a point"
 			end
 			# Verbage - for debuging:
-			puts "DNA 1: #{@dna_1}"
-			puts "DNA 2: #{@dna_2}"
+			puts "ARRAY 1: #{array_1}"
+			puts "ARRAY 2: #{array_2}"
 			puts "Hamming Total: #{hamming_total}"
 			puts ""
+
 			sleep 2
 			i += 1
 		end
@@ -84,7 +89,7 @@ class Hamming
 		puts "DNA 2: #{@dna_2}"
 		puts "Hamming Total: #{hamming_total}"
 		puts "\n"
-		puts "Thank you for using the Hamming Calculator."
+		puts "Thank you for using the calculator."
 		puts "*************************************************************"
 	end
 end
